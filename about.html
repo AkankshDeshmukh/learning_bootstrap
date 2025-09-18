@@ -6,7 +6,7 @@
      <title>Document</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
      <style>
-          body {
+           body {
             background-color: #fdfdfd;
           }
           .about-section {
@@ -28,7 +28,129 @@
             height: 350px;
             object-fit: cover;
             border-radius: 12px;
-          }
+          } 
+          /* Body background */
+body {
+  background: linear-gradient(135deg, #fff0f6, #ffe6f0, #fdfdfd);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Navbar gradient with animation */
+.navbar {
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: navGradient 15s ease infinite;
+}
+@keyframes navGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* About Section */
+.about-section {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 40px;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s forwards;
+}
+.about-section img {
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 1s forwards 0.5s;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
+}
+.card:nth-child(1) { animation-delay: 1s; }
+.card:nth-child(2) { animation-delay: 1.2s; }
+.card:nth-child(3) { animation-delay: 1.4s; }
+
+/* Animations */
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.about-section ul li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: listFade 0.8s forwards;
+}
+.about-section ul li:nth-child(1) { animation-delay: 1.6s; }
+.about-section ul li:nth-child(2) { animation-delay: 1.8s; }
+.about-section ul li:nth-child(3) { animation-delay: 2s; }
+.about-section ul li:nth-child(4) { animation-delay: 2.2s; }
+
+@keyframes listFade {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.about-section img {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: imgZoom 1.2s ease forwards;
+  animation-delay: 0.8s; /* थोडा delay */
+}
+
+@keyframes imgZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.about-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease-in-out;
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFade 1s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 1s; }
+.card:nth-child(2) { animation-delay: 1.2s; }
+.card:nth-child(3) { animation-delay: 1.4s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05) rotateX(5deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+
+      
+
 
       
         </style>
@@ -49,7 +171,7 @@
           <a class="nav-link" aria-current="page" href="index.html">Home</a>
          </li>
          <li class="nav-item">
-          <a class="nav-link active" href="about.html">About</a>
+          <a class="nav-link active" href="about.html">About Us</a>
          </li>
          <li class="nav-item">
           <a class="nav-link" href="services.html">Services</a>
